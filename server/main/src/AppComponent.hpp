@@ -53,12 +53,17 @@ public:
     /* non_blocking connections should be used with AsyncHttpConnectionHandler for AsyncIO */
 #if !defined(OATPP_TARGET_APP)
     v_uint16 port = 8443;
-    const char* keyFile = CERT_DIR "privkey.pem";
-    const char* certFile = CERT_DIR "fullchain.pem";
+    // const char* keyFile = CERT_DIR "privkey.pem";
+    // const char* certFile = CERT_DIR "fullchain.pem";
+    const char* keyFile = "/service/test_key.pem";
+    const char* certFile = "/service/test_cert.crt";
 #else
     v_uint16 port = 443;
-    const char* keyFile = CERT_DIR "privkey.pem";
-    const char* certFile = CERT_DIR "fullchain.pem";
+    // const char* keyFile = CERT_DIR "privkey.pem";
+    // const char* certFile = CERT_DIR "fullchain.pem";
+    const char* keyFile = "/service/test_key.pem";
+    const char* certFile = "/service/test_cert.crt";
+
 #endif
     auto config = oatpp::openssl::Config::createDefaultServerConfigShared(certFile, keyFile);
     auto sslProvider = oatpp::openssl::server::ConnectionProvider::createShared(config, {"0.0.0.0", port, oatpp::network::Address::IP_4});
