@@ -15,8 +15,8 @@ ExternalProject_Add(oatpp
         CMAKE_ARGS -DOATPP_BUILD_TESTS=OFF
 )
 
-ExternalProject_Add(oatpp-libressl
-        GIT_REPOSITORY "https://github.com/oatpp/oatpp-libressl.git"
+ExternalProject_Add(oatpp-openssl
+        GIT_REPOSITORY "https://github.com/oatpp/oatpp-openssl.git"
         GIT_TAG origin/master
         CMAKE_ARGS -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
         DEPENDS oatpp
@@ -26,7 +26,7 @@ ExternalProject_Add(oatpp-libressl
 ExternalProject_Add(main
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/main
         INSTALL_COMMAND cmake -E echo "SKIP INSTALL"
-        DEPENDS oatpp oatpp-libressl
+        DEPENDS oatpp oatpp-openssl
 )
 
 #############################################################################
