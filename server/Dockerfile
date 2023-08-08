@@ -12,4 +12,5 @@ RUN make
 
 EXPOSE 8000 8000
 
-ENTRYPOINT ["make", "run"]
+#ENTRYPOINT ["make", "run"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]

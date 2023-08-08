@@ -52,7 +52,8 @@ link_directories(/usr/local/lib)
 target_include_directories(${project_name}-lib PUBLIC src)
 
 add_definitions(
-        -DSTATIC_RES_PATH="${CMAKE_CURRENT_LIST_DIR}/../../docs/.vuepress/dist"
+    #        -DSTATIC_RES_PATH="${CMAKE_CURRENT_LIST_DIR}/../docs/.vuepress/dist"
+        -DSTATIC_RES_PATH="${CMAKE_CURRENT_LIST_DIR}/../out"
         -DCERT_DIR="${OATPP_CERT_DIR}"
 )
 
